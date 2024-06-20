@@ -22,4 +22,10 @@ public class StudentController {
     public List<Student> getStudentsByMajor(@RequestParam String major) {
         return studentService.getStudentsByMajor(major);
     }
+
+    @GetMapping("/api/grade")
+    public List<Student> getStudentsByGrade(@RequestParam String grade) {
+        return studentService.getStudentsByGrade(grade);
+    }
+
 }

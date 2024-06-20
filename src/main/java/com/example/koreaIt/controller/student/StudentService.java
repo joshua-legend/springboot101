@@ -22,4 +22,9 @@ public class StudentService {
     public List<Student> getStudentsByMajor(String major) {
         return studentRepository.findByMajor(major);
     }
+
+    public List<Student> getStudentsByGrade(String grade) {
+        return studentRepository.findByGrade(grade);
+    }
+
 }
