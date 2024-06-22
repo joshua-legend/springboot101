@@ -36,17 +36,13 @@ public class UserController {
     @PostMapping("/login/jwt")
     @ResponseBody
     public String loginJWT(@RequestBody Map<String, String> data) {
-        System.out.println(data.get("username"));
-        System.out.println(data.get("password"));
         var authToken = new UsernamePasswordAuthenticationToken(
                 data.get("username"), data.get("password")
         );
-        System.out.println(authToken);
         Authentication auth = authenticationManagerBuilder.getObject().authenticate(authToken);
         SecurityContextHolder.getContext().setAuthentication(auth);
         String jwt = JwtUtil.createToken(SecurityContextHolder.getContext().getAuthentication());
         return jwt;
     }
-
 
 }

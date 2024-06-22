@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000") // 요청을 허용할 도메인
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true") // 요청을 허용할 도메인
 public class StudentController {
 
     @Autowired
@@ -25,6 +25,7 @@ public class StudentController {
 
     @GetMapping("/api/grade")
     public List<Student> getStudentsByGrade(@RequestParam String grade) {
+        System.out.println("훑고감");
         return studentService.getStudentsByGrade(grade);
     }
 

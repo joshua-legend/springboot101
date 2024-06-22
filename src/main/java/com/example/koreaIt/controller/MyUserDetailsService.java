@@ -22,7 +22,7 @@ public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         var result = userRepository.findByUsername(username);
-        System.out.println("resultresultresultresultresultresultresultresultresultresultresultresult");
+        System.out.println("결과띠");
         System.out.println(result);
         if (result.isEmpty()){
             throw new UsernameNotFoundException("그런 아이디 없음");
